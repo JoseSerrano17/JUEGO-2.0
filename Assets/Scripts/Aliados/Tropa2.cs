@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tropa2 : TropasAliadas
 {
 
-    [SerializeField] private AlliesData data;
+    [SerializeField] private TroopsData data;
 
 
     private void FixedUpdate()

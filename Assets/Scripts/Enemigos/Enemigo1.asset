@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3946d9c66d456a4081d966e01d9b730, type: 3}
+  m_Name: Enemigo1
+  m_EditorClassIdentifier: 
+  maxHP: 0
+  dmg: 0
+  speed: 50
+  magicResistance: 0
+  armor: 0
+  attackSpeed: 0
+  attackRange: 0
+  magicPenetration: 0
+  armorPenetration: 0
+  coolDown: 0
+  cost: 0
