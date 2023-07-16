@@ -21,5 +21,5 @@ MonoBehaviour:
   attackRange: 0
   magicPenetration: 0
   armorPenetration: 0
-  coolDown: 0
+  coolDown: 5
   cost: 0
