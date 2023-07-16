@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemigo1 : Tropas
 {
-    [SerializeField] private TroopsData data;
+   
 
-
+    //FixedUpdate debería ir en TropasEnemigas!!!
     private void FixedUpdate()
     {
         rBody.velocity = new Vector2(data.getspeed()*-1, rBody.velocity.y);

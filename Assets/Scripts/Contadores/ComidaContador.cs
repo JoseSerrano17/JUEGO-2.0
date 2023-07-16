@@ -22,6 +22,6 @@ public class ComidaContador : MonoBehaviour
     void Update()
     {
         contador.text = (int)comida + "";
-        comida += comidaPorSegundo * Time.deltaTime;
+        comida += comidaPorSegundo * Time.deltaTime; 
     }
 }
