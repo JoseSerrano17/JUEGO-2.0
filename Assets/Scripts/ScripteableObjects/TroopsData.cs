@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Alllies Data", menuName ="Allies Data")]
-public class AlliesData : ScriptableObject
+[CreateAssetMenu(fileName = "New Troop Data", menuName ="Troops Data")]
+public class TroopsData : ScriptableObject
 {
     //Stats
     [SerializeField] private int maxHP;             //Max Health Points

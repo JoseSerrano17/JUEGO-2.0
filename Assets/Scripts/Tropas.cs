@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Tropas : MonoBehaviour
 {
-    protected int hp; //Actual HP
-     protected Rigidbody2D rBody;
+
+    [SerializeField] protected TroopsData data; //Data
+    protected int hp; //Currently HP
+    protected Rigidbody2D rBody;
     
     private void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-    }  
- 
+        hp = data.gethp();
+    }
+
+
     protected void takeDamage(int dmg)
     {
         hp = hp - dmg;
@@ -20,6 +24,11 @@ public class Tropas : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public float getcd()
+    {
+        return data.getcoolDown();
     }
 
 }
