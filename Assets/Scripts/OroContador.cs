@@ -5,20 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ContadorOro : MonoBehaviour
+public class ContadorOro : Contador
 {
 
-    [SerializeField] private float oro;
-    [SerializeField] private TMP_Text contador;
-    [SerializeField] private float oroPorSegundo;
+    [SerializeField] private float gold;
+    [SerializeField] private TMP_Text counter;
+    [SerializeField] private float goldPerSecond;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        contador = GetComponent<TMP_Text>();
-        oro = 0;
-        oroPorSegundo = 1.2f;
+        counter = GetComponent<TMP_Text>();
+        gold = 0;
+        goldPerSecond = 1.2f;
         
 
     }
@@ -26,7 +26,7 @@ public class ContadorOro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        contador.text = (int)oro + "";
-        oro += oroPorSegundo * Time.deltaTime;
+        gold = updateCounter(gold, goldPerSecond);
+        counter.text = (int)gold + "";
     }
 }

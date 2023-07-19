@@ -1305,9 +1305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d626777015223440a62b79182c5b866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oro: 0
-  contador: {fileID: 1024491782}
-  oroPorSegundo: 0
+  gold: 0
+  counter: {fileID: 1024491782}
+  goldPerSecond: 0
 --- !u!1 &1179142613
 GameObject:
   m_ObjectHideFlags: 0
