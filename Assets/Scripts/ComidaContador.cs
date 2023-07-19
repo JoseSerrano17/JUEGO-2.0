@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ComidaContador : MonoBehaviour
+public class ComidaContador : Contador
 {
 
-    [SerializeField] private float comida;
-    [SerializeField] private TMP_Text contador;
-    [SerializeField] private float comidaPorSegundo;
+    [SerializeField] private float food;
+    [SerializeField] private TMP_Text counter;
+    [SerializeField] private float foodPerSecond;
 
     // Start is called before the first frame update
     void Start()
     {
-        contador = GetComponent<TMP_Text>();
-        comida = 0;
-        comidaPorSegundo = 0.8f;
+        counter = GetComponent<TMP_Text>();
+        food = 0;
+        foodPerSecond = 0.8f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        contador.text = (int)comida + "";
-        comida += comidaPorSegundo * Time.deltaTime;
+        food = updateCounter(food, foodPerSecond);
+        counter.text = (int)food + "";
     }
 }
