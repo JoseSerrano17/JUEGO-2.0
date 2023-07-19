@@ -8,7 +8,7 @@ public class ContadorMadera : Contador
     [SerializeField] private float wood;
     [SerializeField] private TMP_Text counter;
     [SerializeField] private float woodPerSecond;
-    // Start is called before the first frame update
+    
     void Start()
     {
         counter = GetComponent<TMP_Text>();
@@ -16,7 +16,6 @@ public class ContadorMadera : Contador
         woodPerSecond = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         wood = updateCounter(wood, woodPerSecond);

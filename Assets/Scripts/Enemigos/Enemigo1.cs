@@ -6,7 +6,7 @@ public class Enemigo1 : Tropas
 {
    
 
-    //FixedUpdate debería ir en TropasEnemigas!!!
+    //FixedUpdate deberia ir en TropasEnemigas!!!
     private void FixedUpdate()
     {
         rBody.velocity = new Vector2(data.getspeed()*-1, rBody.velocity.y);
