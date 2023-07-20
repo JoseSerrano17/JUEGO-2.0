@@ -6,14 +6,20 @@ using TMPro;
 public class Contador : MonoBehaviour
 {
     protected TMP_Text counterText;
-    protected float resource;
-    protected float resPerSecond;
+    [SerializeField] protected float resource;
+    [SerializeField] protected float resPerSecond;
 
-    void Start()
+    protected void startGeneral()
     {
         counterText = GetComponent<TMP_Text>();
-        resource = 0f;
-        resPerSecond = 0f;
+        resource = 0;
+    }
+
+    void Update() // No entra
+    {
+        print("Hola");
+        updateCounter(resource, resPerSecond);
+        counterText.text = (int)resource + "";
     }
 
     protected float updateCounter(float resourceAux, float resPerSecondAux)
@@ -22,33 +28,18 @@ public class Contador : MonoBehaviour
         return resourceAux;
     }
 
-    protected TMP_Text getCounterText()
+    public void restarContadores(float coste)
     {
-        return counterText;
+        resource -= coste;
     }
 
-    protected void setCounterText(TMP_Text text)
-    {
-        this.counterText = text;
-    }
-
-    protected float getResource()
+    public float getResource()
     {
         return resource;
     }
 
-    protected void setResource(float resource)
-    {
-        this.resource = resource;
-    }
-
-    protected float getResourcePerSecond()
+    public float getResourcePerSecond()
     {
         return resPerSecond;
-    }
-
-    protected void setResourcePerSecond(float resourcePerSecond)
-    {
-        this.resPerSecond = resourcePerSecond;
     }
 }

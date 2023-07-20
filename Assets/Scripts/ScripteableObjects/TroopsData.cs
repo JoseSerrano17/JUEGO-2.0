@@ -18,9 +18,12 @@ public class TroopsData : ScriptableObject
     [SerializeField] private int magicPenetration;  //Magic Penetration
     [SerializeField] private int armorPenetration;  //Armor Penetration
     [SerializeField] private float coolDown;        //CoolDown
-    [SerializeField] private int cost;              //Coste
+    [SerializeField] private float goldCost;        //Coste de oro
+    [SerializeField] private float woodCost;        //Coste de madera
+    [SerializeField] private float foodCost;        //Coste de comida
+    [SerializeField] private float knowledgeCost;   //Coste de conocimiento
 
-   public int gethp()
+    public int gethp()
     {
         return maxHP;
     }
@@ -68,11 +71,24 @@ public class TroopsData : ScriptableObject
     {
         return coolDown;
     }
-
-    public int getcost()
-    {
-        return cost;
-    }
     
-   
+   public float getGoldCost()
+    {
+        return goldCost;
+    }
+
+    public float getWoodCost()
+    {
+        return woodCost;
+    }
+
+    public float getFoodCost()
+    {
+        return foodCost;
+    }
+
+    public float getKnowledgeCost()
+    {
+        return knowledgeCost;
+    }
 }

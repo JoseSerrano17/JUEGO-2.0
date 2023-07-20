@@ -22,4 +22,7 @@ MonoBehaviour:
   magicPenetration: 0
   armorPenetration: 0
   coolDown: 2
-  cost: 0
+  goldCost: 10
+  woodCost: 5
+  foodCost: 0
+  knowledgeCost: 0

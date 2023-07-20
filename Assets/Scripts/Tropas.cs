@@ -31,4 +31,14 @@ public class Tropas : MonoBehaviour
         return data.getcoolDown();
     }
 
+    public float getGoldCost()
+    {
+        return data.getGoldCost();
+    }
+
+    public float getWoodCost()
+    {
+        return data.getWoodCost();
+    }
+
 }

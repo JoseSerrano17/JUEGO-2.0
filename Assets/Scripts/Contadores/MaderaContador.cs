@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class ContadorMadera : Contador
 {
-    [SerializeField] private float wood;
-    [SerializeField] private TMP_Text counter;
-    [SerializeField] private float woodPerSecond;
-    
     void Start()
     {
-        counter = GetComponent<TMP_Text>();
-        wood = 0;
-        woodPerSecond = 1f;
+        base.startGeneral();
+        resPerSecond = 0.8f;
     }
 
     void Update()
     {
-        wood = updateCounter(wood, woodPerSecond);
-        counter.text = (int)wood + "";
+        resource = updateCounter(resource, resPerSecond);
+        counterText.text = (int)resource + "";
     }
 }

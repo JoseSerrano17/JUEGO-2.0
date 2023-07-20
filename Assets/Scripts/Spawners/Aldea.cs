@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86;
 
@@ -9,11 +10,17 @@ public class Aldea : MonoBehaviour
     [SerializeField] private GameObject tropa1;
     [SerializeField] private GameObject tropa2;
     [SerializeField] private GameObject tropa3;
-   
+    [SerializeField] private GameObject goldCounter;
+    [SerializeField] private GameObject woodCounter;
+    [SerializeField] private GameObject foodCounter;
+    [SerializeField] private GameObject knowledgeCounter;
+
     //Tropa1
     private float coolDownTroop1;
     private bool inCoolDown_Tropa1;
     private float lastTimeSpawned_Tropa1;
+    private float goldCostT1;
+    private float woodCostT1;
 
     //Tropa2
     private float coolDownTroop2;
@@ -31,6 +38,8 @@ public class Aldea : MonoBehaviour
     {
         //Tropa1
         coolDownTroop1 = tropa1.GetComponent<Tropa1>().getcd();
+        goldCostT1 = tropa1.GetComponent<Tropa1>().getGoldCost();
+        woodCostT1 = tropa1.GetComponent<Tropa1>().getWoodCost();
         inCoolDown_Tropa1 = false;
         lastTimeSpawned_Tropa1 = 0;
 
@@ -54,7 +63,7 @@ public class Aldea : MonoBehaviour
        
         //Check for spawn
         if (Input.GetKeyUp(KeyCode.Alpha1) )
-        {          
+        {
             spawnTroop1();
         }
 
@@ -71,12 +80,13 @@ public class Aldea : MonoBehaviour
 
     private void spawnTroop1()
     {
-        if(!inCoolDown_Tropa1)
+        if(!inCoolDown_Tropa1 && checkCost())
         {
             lastTimeSpawned_Tropa1 = Time.time;
             inCoolDown_Tropa1 = true;
+            restarCoste();
             Instantiate(tropa1, this.transform.position, this.transform.rotation);
-        }      
+        }
     }
 
     private void spawnTroop2()
@@ -118,5 +128,28 @@ public class Aldea : MonoBehaviour
             inCoolDown_Tropa3 = false;
         }
 
+    }
+
+    private bool checkCost()
+    {
+        if (goldCounter.GetComponent<Contador>().getResource() >= goldCostT1)
+        {
+            print("Oro: "+goldCounter.GetComponent<Contador>().getResource());
+            if(woodCounter.GetComponent<Contador>().getResource() >= woodCostT1)
+            {
+                print("Madera: "+ woodCounter.GetComponent<Contador>().getResource());
+                return true;
+            }
+            print("No tienes madera suficiente");
+            return false;
+        }
+        print("No tienes oro suficiente");
+        return false;
+    }
+
+    private void restarCoste()
+    {
+        goldCounter.GetComponent<Contador>().restarContadores(goldCostT1);
+        woodCounter.GetComponent<Contador>().restarContadores(woodCostT1);
     }
 }

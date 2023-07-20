@@ -271,9 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e7f523f6a4aca498fc72b72340181b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  madera: 0
-  contador: {fileID: 193113591}
-  maderaPorSegundo: 0
+  wood: 0
+  counter: {fileID: 0}
+  woodPerSecond: 0
 --- !u!1 &341473165
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,12 +419,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 341473165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc471b1266b4c847b8ee1362fffb371, type: 3}
+  m_Script: {fileID: 11500000, guid: bed9d990b2f840f469ab50934a361cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida: 0
-  contador: {fileID: 341473167}
-  comidaPorSegundo: 0
+  food: 0
+  counter: {fileID: 0}
+  foodPerSecond: 0
 --- !u!1 &662219570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
-  counter: {fileID: 1024491782}
+  counter: {fileID: 0}
   goldPerSecond: 0
 --- !u!1 &1179142613
 GameObject:
@@ -1709,9 +1709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fcd741b1d353848927f2ec1f82a872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conocimiento: 0
-  contador: {fileID: 1723133119}
-  conocimientoPorSegundo: 0
+  knowledge: 0
+  counter: {fileID: 0}
+  knowledgePerSecond: 0
 --- !u!1 &1783052528
 GameObject:
   m_ObjectHideFlags: 0
